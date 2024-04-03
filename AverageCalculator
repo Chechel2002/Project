@@ -1,0 +1,38 @@
+import java.util.Scanner;
+
+public class AverageCalculator {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int choice;
+        double quiz, labwork, grade;
+        
+        do {
+            System.out.println("choose an option");
+            System.out.println("Enter 1 to compute Midterm Grade");
+            System.out.println("Enter 2 to compute the Final Grade");
+            System.out.println("3 Exit the app");
+            System.out.print("Enter your choice: ");
+            choice = scanner.nextInt();
+            
+            if(choice == 1 || choice == 2) {
+                System.out.print("Enter quiz grade: ");
+                quiz = scanner.nextDouble();
+                System.out.print("Enter labwork grade: ");
+                labwork = scanner.nextDouble();
+                System.out.print("Enter exam grade: ");
+                grade = scanner.nextDouble();
+                
+                double totalGrade = (quiz + labwork + grade) / 3.0;
+                System.out.println("Your Average is: " + totalGrade);
+                if(totalGrade <= 3) {
+                    System.out.println("PASS");
+                } else {
+                    System.out.println("Sorry you didn't pass");
+                }
+            }
+        } while(choice != 3);
+        
+        System.out.println("Exiting application");
+    }
+}
